@@ -1,0 +1,11 @@
+import {cp, mkdir, readFile, writeFile} from 'node:fs/promises';
+import path from 'node:path';
+const root = path.resolve(import.meta.dirname, '..');
+await mkdir(path.join(root, 'dist'), {recursive: true});
+for (const file of ['index.html', 'styles.css', 'app.js', 'favicon.svg']) await cp(path.join(root, file), path.join(root, 'dist', file));
+await cp(path.join(root, 'public'), path.join(root, 'dist'), {recursive: true});
+const manifestPath = path.join(root, '.openai/hosting.json');
+const manifest = JSON.parse(await readFile(manifestPath, 'utf8'));
+manifest.static = {directory: 'dist'};
+await writeFile(manifestPath, JSON.stringify(manifest, null, 2) + '\n');
+console.log('Built static portfolio in dist/');

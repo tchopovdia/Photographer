@@ -1,0 +1,66 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#ffffff">
+  <meta name="description" content="Serhii Diediukh — Photographer from Kyiv. Landscapes, travel, nature, and still life.">
+  <title>Serhii Diediukh — Photographer from Kyiv</title>
+  <link rel="icon" href="./favicon.svg" type="image/svg+xml">
+  <link rel="preload" href="./assets/condensed-light.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/condensed-semibold.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="preload" href="./assets/serif-italic.ttf" as="font" type="font/ttf" crossorigin>
+  <link rel="stylesheet" href="./styles.css">
+  <script src="./app.js" type="module"></script>
+</head>
+<body>
+  <a class="skip-link" href="#portfolio">Skip to photographs</a>
+  <div class="page-shell">
+    <header class="page-header">
+      <a class="identity" href="./" aria-label="Serhii Diediukh, home">
+        <span class="name">Serhii Diediukh</span>
+        <span class="tagline">Photographer from Kyiv</span>
+      </a>
+      <nav class="social-links" aria-label="Photography platforms">
+        <a href="https://www.behance.net/" target="_blank" rel="noopener noreferrer">Behance</a><span aria-hidden="true">|</span>
+        <a href="https://www.pexels.com/" target="_blank" rel="noopener noreferrer">Pexels</a><span aria-hidden="true">|</span>
+        <a href="https://unsplash.com/" target="_blank" rel="noopener noreferrer">Unsplash</a><span aria-hidden="true">|</span>
+        <a href="https://pixabay.com/" target="_blank" rel="noopener noreferrer">Pixabay</a>
+      </nav>
+    </header>
+    <main class="gallery-layout" id="portfolio">
+      <aside class="sidebar">
+        <nav class="collections" aria-label="Photo collections">
+          <button type="button" data-collection="carpathians" aria-pressed="false">The Carpathians</button>
+          <button type="button" data-collection="italy" aria-pressed="false">Italy</button>
+          <button type="button" data-collection="croatia" aria-pressed="true">Croatia</button>
+          <button type="button" data-collection="macro" aria-pressed="false">Macro</button>
+          <button type="button" data-collection="still-life" aria-pressed="false">Still Life</button>
+        </nav>
+        <a class="contact" href="mailto:photo@gmail.com">photo@gmail.com</a>
+      </aside>
+      <section class="gallery" aria-label="Croatia photographs">
+        <figure class="photograph">
+          <div class="photo-stage" tabindex="0" role="group" aria-label="Photo viewer. Use left and right arrows to browse; Enter to enlarge.">
+            <div class="photo-frame" id="photo-frame"></div>
+            <button class="photo-arrow previous" type="button" aria-label="Previous photograph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m15 5-7 7 7 7"/></svg></button>
+            <button class="photo-arrow next" type="button" aria-label="Next photograph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="m9 5 7 7-7 7"/></svg></button>
+            <button class="expand-button" type="button" aria-label="Enlarge photograph"><svg viewBox="0 0 24 24" fill="none" aria-hidden="true"><path d="M8 3H3v5M16 3h5v5M21 16v5h-5M8 21H3v-5"/></svg></button>
+          </div>
+          <figcaption class="photo-meta" aria-live="polite" aria-atomic="true"><span id="photo-caption">Brella beach, 2026</span><span id="photo-count">3/6</span></figcaption>
+        </figure>
+        <div class="gallery-progress" role="group" aria-label="Select a photograph"></div>
+      </section>
+      <nav class="thumbnails" aria-label="Croatia photo thumbnails"></nav>
+    </main>
+    <footer class="mobile-footer"><a href="mailto:photo@gmail.com">photo@gmail.com</a></footer>
+  </div>
+  <dialog class="lightbox" aria-label="Enlarged photograph">
+    <button class="lightbox-close" type="button" aria-label="Close enlarged photograph"><span aria-hidden="true">×</span></button>
+    <button class="lightbox-prev" type="button" aria-label="Previous photograph"><span aria-hidden="true">←</span></button>
+    <figure><div class="lightbox-frame"></div><figcaption></figcaption></figure>
+    <button class="lightbox-next" type="button" aria-label="Next photograph"><span aria-hidden="true">→</span></button>
+  </dialog>
+  <noscript><p class="noscript">Please enable JavaScript to explore the photo collections.</p></noscript>
+</body>
+</html>
