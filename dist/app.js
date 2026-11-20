@@ -59,6 +59,7 @@ function renderPhoto() {
  if (!matchMedia('(prefers-reduced-motion: reduce)').matches) frame.animate([{opacity: .45}, {opacity: 1}], {duration: 260});
  caption.textContent = item.caption;
  count.textContent = `${index + 1}/${photos.length}`;
+ progress.style.setProperty('--progress', `${((index + 1) / photos.length) * 100}%`);
  [...thumbs.children].forEach((button, i) => button.setAttribute('aria-current', String(i === index)));
  [...progress.children].forEach((button, i) => button.setAttribute('aria-pressed', String(i === index)));
  if (lightbox.open) renderLightbox();
